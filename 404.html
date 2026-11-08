@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page not found · Bhavya Anil</title>
+<meta name="theme-color" content="#1d2928">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2304050a'/%3E%3Ccircle cx='32' cy='32' r='9' fill='%23a8d672'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%235b9dff' stroke-opacity='.5' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Standalone 404 page in the portfolio's dark style: cursor-lit dot grid, a scrambling "404" and links home. */
+:root { color-scheme: dark; --bg: #1d2928; --ink: #eef4ea; --dim: #b6c2bc; --faint: #96a49e; --c1: #a8d672; --c2: #5b9dff; --line2: rgba(200, 220, 210, 0.26); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #1d2928; } }
+:root[data-theme="dark"] { --bg: #1d2928; }
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; background: radial-gradient(900px 600px at 15% 10%, rgba(168, 214, 114, 0.11), transparent 62%), radial-gradient(900px 600px at 85% 90%, rgba(91, 157, 255, 0.13), transparent 62%), var(--bg); color: var(--ink); font-family: "Geist", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+body { min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; overflow: hidden; }
+.dots, .lit { position: fixed; inset: 0; pointer-events: none; background-size: 30px 30px; }
+.dots { background-image: radial-gradient(rgba(200, 220, 210, 0.1) 1px, transparent 1.4px); }
+.lit { background-image: radial-gradient(rgba(168, 214, 114, 0.55) 1px, transparent 1.6px); -webkit-mask-image: radial-gradient(240px circle at var(--mx, 50%) var(--my, 45%), #000, transparent 75%); mask-image: radial-gradient(240px circle at var(--mx, 50%) var(--my, 45%), #000, transparent 75%); }
+main { position: relative; text-align: center; max-width: 560px; }
+.code { font: 500 .8rem "Geist Mono", monospace; color: var(--c1); letter-spacing: .1em; }
+h1 { margin: 10px 0 8px; font-weight: 500; font-size: clamp(6rem, 26vw, 11rem); line-height: .9; letter-spacing: -.06em; background: linear-gradient(100deg, var(--ink) 10%, var(--c1) 55%, var(--c2) 95%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+p { margin: 0 auto 26px; color: var(--dim); line-height: 1.6; max-width: 42ch; }
+.btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+a { display: inline-flex; align-items: center; height: 46px; padding: 0 20px; border-radius: 12px; border: 1px solid var(--line2); color: var(--ink); text-decoration: none; font-weight: 500; transition: border-color .25s, box-shadow .25s; }
+a:hover { border-color: var(--c1); box-shadow: 0 0 24px -6px rgba(168, 214, 114, .55); }
+a.pri { background: var(--ink); color: #1d2928; border-color: transparent; }
+a:focus-visible { outline: 2px solid var(--c1); outline-offset: 3px; }
+.term { margin-top: 30px; font: 400 .78rem "Geist Mono", monospace; color: var(--faint); }
+</style>
+</head>
+<body>
+<div class="dots" aria-hidden="true"></div>
+<div class="lit" aria-hidden="true"></div>
+<main>
+  <div class="code">ERROR · PAGE NOT FOUND</div>
+  <h1 id="n">404</h1>
+  <p>This page drifted off somewhere. The link may be mistyped, or the page has moved.</p>
+  <div class="btns"><a class="pri" href="/">Back to the portfolio →</a><a href="/#projects">See projects</a></div>
+  <div class="term">$ cd ~/bhavya-anil</div>
+</main>
+<script>
+(function () {
+  addEventListener('pointermove', e => { document.body.style.setProperty('--mx', e.clientX + 'px'); document.body.style.setProperty('--my', e.clientY + 'px'); }, { passive: true });
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const el = document.getElementById('n'), G = '01<>/#%&?', t0 = performance.now();
+  (function f(now) { const e = now - t0; el.textContent = [...'404'].map((c, i) => e > 400 + i * 220 ? c : G[(Math.random() * G.length) | 0]).join(''); if (e < 1200) requestAnimationFrame(f); else el.textContent = '404'; })(t0);
+})();
+</script>
+</body>
+</html>
